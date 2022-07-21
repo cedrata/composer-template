@@ -3,9 +3,14 @@ services:
   db:
     container_name: mongo
     image: mongo
+    # image: cedrata/fastapi-auth-template:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     ports:
       - "27017:27017"
     volumes:
-      - ./data/db:/data/db
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      # - ./data/db:/data/db
     env_file:
       - .env
