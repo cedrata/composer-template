@@ -1,8 +1,8 @@
 version: "3.9"
 services:
   db:
-    container_name: mongo
-    image: mongo
+    container_name: mongo-mockup:0.0.1
+    image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
