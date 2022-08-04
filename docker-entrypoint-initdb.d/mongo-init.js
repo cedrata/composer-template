@@ -6,13 +6,13 @@ print('Start #################################################################')
 // db = connect('mongodb://'+process.env.MONGO_INITDB_ROOT_USERNAME+':'+process.env.MONGO_INITDB_ROOT_PASSWORD+'@localhost:27017');
 db = connect('mongodb://root:root@localhost:27017');
 
-db = db.getSiblingDB('fastapi-auth-template')
+db = db.getSiblingDB('fastapi_auth_template')
 
 db.createUser(
     {
         user: DB_ADMIN_USERNAME,
         pwd: DB_ADMIN_PASSWORD,
-        roles: [{ role: 'dbAdmin', db: 'fastapi-auth-template'}]
+        roles: [{ role: 'dbOwner', db: 'fastapi_auth_template'}]
     }
 )
 
