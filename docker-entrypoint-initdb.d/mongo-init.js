@@ -1,18 +1,15 @@
-const DB_ADMIN_USERNAME = 'admin'
-const DB_ADMIN_PASSWORD = 'admin'
-
 print('Start #################################################################');
 
 // db = connect('mongodb://'+process.env.MONGO_INITDB_ROOT_USERNAME+':'+process.env.MONGO_INITDB_ROOT_PASSWORD+'@localhost:27017');
-db = connect('mongodb://root:root@localhost:27017');
+db = connect('mongodb://' + _getEnv("MONGO_INITDB_ROOT_USERNAME") + ':' + _getEnv("MONGO_INITDB_ROOT_PASSWORD") + '@localhost:27017');
 
-db = db.getSiblingDB('fastapi_auth_template')
+db = db.getSiblingDB(_getEnv("MONGO_INITDB_DATABASE"))
 
 db.createUser(
 	{
-		user: DB_ADMIN_USERNAME,
-		pwd: DB_ADMIN_PASSWORD,
-		roles: [{ role: 'dbOwner', db: 'fastapi_auth_template' }]
+		user: _getEnv("DB_ADMIN_USERNAME"),
+		pwd: _getEnv("DB_ADMIN_PASSWORD"),
+		roles: [{ role: 'dbOwner', db: _getEnv("MONGO_INITDB_DATABASE") }]
 	}
 )
 
