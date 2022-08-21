@@ -1,0 +1,6 @@
+[submodule "fastapi-auth-template"]
+	path = fastapi-auth-template
+	url = https://github.com/cedrata/fastapi-auth-template
+[submodule "fastapi-auth-template-db"]
+	path = fastapi-auth-template-db
+	url = https://github.com/cedrata/fastapi-auth-template-db
