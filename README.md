@@ -1,5 +1,6 @@
 # Authorized containerized MongoDB
 This is an example of how to dockerize and secure a mongo db instance.
+The purpose of this repository is to provide a database for [this api](https://github.com/cedrata/fastapi-auth-template). The final objective is to create a docker compose file in [this other repository](https://github.com/cedrata/composer-template) to be able to launch the DB and the complete application example API+DB as a containerized application.
 
 **Before doing anything make sure docker is installed!**
 
