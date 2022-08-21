@@ -1,1 +1,5 @@
 data/db/*
+
+# Environement.
+.env
+env/*
