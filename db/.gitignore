@@ -1,1 +1,6 @@
+# Database volume.
 data/db/*
+
+# Environement.
+.env
+env/*
