@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  api:
+    container_name: api
+    image: fastapi-auth-api:0.0.0-dev
+    build:
+      context: ./fastapi-auth-template
+      dockerfile: ./dockerfiles/Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fastapi-auth-template/api/src:/app/src:ro
+      - ./fastapi-auth-template/logs:/app/logs:rw
+      - ./fastapi-auth-template/configs:/app/configs:ro
+    env_file:
+      - ./env/.api.env
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mongo:latest
+    ports:
+      - "27020:27017"
+    volumes:
+      - ./fastapi-auth-template-db/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      # - ./fastapi-auth-template-db/data/db:/data/db # Uncomment if you want this to save db state in local too.
+    env_file:
+      - ./env/.db.env
+
+# TODO: Improve with the use of networks.
