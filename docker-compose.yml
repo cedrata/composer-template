@@ -26,5 +26,3 @@ services:
       # - ./fastapi-auth-template-db/data/db:/data/db # Uncomment if you want this to save db state in local too.
     env_file:
       - ./env/.db.env
-
-# TODO: Improve with the use of networks.
