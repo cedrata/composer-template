@@ -11,8 +11,8 @@ Thank you to everyone that will decide to support this and other projects <3
 This project depends on two repositories that can be installed after cloning this one on your machine by simply following [those steps](https://www.w3docs.com/snippets/git/how-to-clone-including-submodules.html). After those steps are completed simply follow along with the following steps.
 
 More precisely this repository depends on:
-- [fastapi-auth-template v0.1.2](https://github.com/cedrata/fastapi-auth-template/releases/tag/0.1.2)
-- [fastapi-auth-template-db v0.0.0](https://github.com/cedrata/fastapi-auth-template-db/releases/tag/0.0.0)
+- [fastapi-auth-template v0.1.2-dev](https://github.com/cedrata/fastapi-auth-template/releases/tag/0.1.2-dev)
+- [fastapi-auth-template-db v0.0.0-dev](https://github.com/cedrata/fastapi-auth-template-db/releases/tag/0.0.0-dev)
 
 # Create the environment variables
 To start this application some environement variables are required.
